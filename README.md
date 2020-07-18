@@ -3,7 +3,6 @@
   
   ## See it here!: https://project-2-schoess.herokuapp.com/
   
-  [![NPM Version][npm-image]][npm-url]
   ## Table of Contents
     * Usage
     * License
