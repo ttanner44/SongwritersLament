@@ -1,0 +1,114 @@
+{{!-- Navigation bar --}}
+<nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            
+            <span class="navbar-text" id="SL"><i class="fas fa-music pr-1"></i>Songwriter's Lament</span>
+
+            
+
+          </div>
+          <a class="navbar-brand float-right text-dark" id="SL" href="/logout">Logout</a>
+        </div>
+</nav>
+
+{{!-- Main Body --}}
+<div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-4">
+                    <form class="newLyrics" id="newLyric">
+                        <div class="form-group">
+                            <label for="username" id="SL">Create Song</label>
+                            </br>
+                            <input class="songTitle" type="text" placeholder="Song Title">
+                            <input class="genre" type="text" placeholder="Genre">
+                            <textarea type="lyric" class="form-control" id="lyric-input" placeholder="Lyrics..." rows="8"></textarea>
+                            <textarea type="inspiration" class="form-control" id="inspiration-input" placeholder="Inspirations..." rows="2"></textarea>
+                            <textarea type="notes" class="form-control" id="notes-input" placeholder="Notes..." rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-danger createLyrics">Create</button>
+                        
+                    </form>
+
+                    <form class="updateLyric d-none" id="updateLyric">
+                        <div class="form-group">
+                            <label for="username" id="SL">Update Song</label>
+                            </br>
+                            <input class="songTitle" type="text" placeholder="Song Title">
+                            <input class="genre" type="text" placeholder="Genre">
+                            <textarea type="lyric" class="form-control" id="lyric-input" placeholder="Lyrics..." rows="8"></textarea>
+                            <textarea type="inspiration" class="form-control" id="inspiration-input" placeholder="Inspirations..." rows="2"></textarea>
+                            <textarea type="notes" class="form-control" id="notes-input" placeholder="Notes..." rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-danger updateLyrics">Update</button>
+                        
+                    </form>
+                </div>
+                
+
+                <div class="col-sm-8"> <!--yes is to get an idea of where the saved songs will be rendered too-->
+                    <div class="row" id="lyricsBody">
+                        {{#each lyrics}}
+                            <div class='col-sm-3 bodyLyric'>
+                                <div class='card'>
+                                    <div class='card-body'>
+                                    <h5 class='card-title'>
+                                        {{title}}
+                                    </h5>
+                                    <h6 class='card-subtitle'>
+                                        {{genre}}
+                                    </h6>
+                                    <p class='card-text'>
+                                        {{lyrics}}
+                                    </p>
+                                    <p class='card-text'>
+                                        {{inspiration}}
+                                    </p>
+                                    <p class='card-text'>
+                                        {{notes}}
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        {{/each}} 
+                    </div>
+                   
+                </div>
+               
+            </div>
+        </div>
+
+        
+    <div class = "container-fluid">
+        <div class="row api-row">
+            <div class="api-song col-sm-4">
+                <label for="search" id="SL">Is Your Artist Name Unique?</label>
+                <br>
+                <input class = "api-search" type = "text" placeholder="Search...">
+                <br>
+                <button type = "submit" class = "btn btn-danger api-button">Search</button>
+            </div>
+            <div class="api-results col-sm-3">
+                <div>
+                    <h3 class="results"></h3>
+                    <h3 class="notoriginallol"></h3>
+                </div>
+            </div>
+        </div>
+        
+    </div>        
+
+        </div>
+
+    </div>
+
+
+</div>
+
+<div>
+    <footer>
+        Songwriter's Lament
+    </footer>
+</div>
+    <script type="text/javascript" src="/js/dashboardEx.js"></script>
+    <script type="text/javascript" src="/js/artistNameChecker.js"></script>
